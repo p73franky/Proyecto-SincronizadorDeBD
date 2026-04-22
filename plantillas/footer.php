@@ -1,10 +1,4 @@
-<?php
-if (is_dir($rutaBase . "/img")) {
-    $rutaStatic = "img/";
-} else {
-    $rutaStatic = "../img/";
-}
-?>
+
 <footer>
     <div>
         <p>Contacto</p>
@@ -13,9 +7,9 @@ if (is_dir($rutaBase . "/img")) {
     </div>
     <div>
         <p>Redes Sociales</p>
-        <a href="https://x.com/"><img src="<?= $rutaStatic ?>img/iconos/twitter.svg" height="30px"" height=" 30px"></a>
-        <a href="https://www.linkedin.com/"><img src="<?= $rutaStatic ?>/img/iconos/linkedin.svg" height="30px"></a>
-        <a href="https://github.com/"><img src="<?= $rutaStatic ?>/img/iconos/github.svg" height="30px"></a>
+        <a href="https://x.com/"><img src="/iconos/twitter.svg" height="30px" height=" 30px"></a>
+        <a href="https://www.linkedin.com/"><img src="/img/iconos/linkedin.svg" height="30px"></a>
+        <a href="https://github.com/"><img src="/img/iconos/github.svg" height="30px"></a>
     </div>
     <div>
         <p>Porfolio</p>
