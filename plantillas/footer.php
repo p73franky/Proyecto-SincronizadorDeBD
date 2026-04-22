@@ -21,6 +21,7 @@ if (is_dir($rutaBase . "/img")) {
         <p>Porfolio</p>
         <p>Los mejores desrrollos By Daniel And Hugo</p>
         <p>© 2025 Mi Portfolio</p>
+    </div>
 </footer>
 </body>
 </html>
