@@ -147,6 +147,13 @@
     background-color: #1e1e3a;
 }
 
+footer{
+    background-color: gray;
+    color: red;
+    display: grid;
+    grid-template-columns: repeat(1fr);
+}
+
 /* =====================
    TABLET (≥ 640px)
    ===================== */
