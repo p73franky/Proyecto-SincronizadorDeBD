@@ -150,7 +150,7 @@
 footer{
     align-items: center;
     background-color: gray;
-    color: red;
+    color: white;
     display: grid;
     text-align: center;
     grid-template-columns: repeat(3, 1fr);
