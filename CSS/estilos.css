@@ -1,0 +1,228 @@
+/* =====================
+   CABECERA PRINCIPAL
+   ===================== */
+ 
+.cabecera {
+    background-color: #1a1a2e;
+    padding: 0 1rem;
+    height: 56px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+ 
+/* ── LOGO ── */
+ 
+.marca a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: bold;
+}
+ 
+/* ── TRUCO CSS: ocultamos el checkbox real ── */
+ 
+.interruptor-menu {
+    display: none;
+}
+ 
+/* ── BOTÓN HAMBURGUESA (label que activa el checkbox) ── */
+ 
+.boton-menu {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    padding: 6px 10px;
+    border: 1px solid #444;
+    border-radius: 6px;
+}
+ 
+.boton-menu span {
+    display: block;
+    width: 20px;
+    height: 2px;
+    background-color: #ffffff;
+    border-radius: 2px;
+    transition: all 0.25s ease;
+}
+ 
+/* Animación X al abrir */
+.interruptor-menu:checked ~ .cabecera .boton-menu span:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+}
+.interruptor-menu:checked ~ .cabecera .boton-menu span:nth-child(2) {
+    opacity: 0;
+}
+.interruptor-menu:checked ~ .cabecera .boton-menu span:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+}
+ 
+/* ── NAVEGACIÓN (oculta en móvil) ── */
+ 
+.navegacion {
+    display: none;
+    flex-direction: column;
+    background-color: #1a1a2e;
+    position: fixed;
+    top: 56px;
+    left: 0;
+    right: 0;
+    z-index: 99;
+    border-top: 1px solid #333;
+}
+ 
+/* Se muestra cuando el checkbox está marcado */
+.interruptor-menu:checked ~ .navegacion {
+    display: flex;
+}
+ 
+/* ── LISTA PRINCIPAL ── */
+ 
+.lista-menu {
+    list-style: none;
+    margin: 0;
+    padding: 0.5rem 0;
+}
+ 
+.lista-menu > li {
+    position: relative;
+}
+ 
+.lista-menu > li > a,
+.lista-menu > li > label {
+    display: block;
+    padding: 12px 1rem;
+    color: #cccccc;
+    text-decoration: none;
+    font-size: 14px;
+    cursor: pointer;
+}
+ 
+.lista-menu > li > a:hover,
+.lista-menu > li > label:hover {
+    color: #ffffff;
+    background-color: #2a2a4a;
+}
+ 
+/* ── TRUCO CSS: checkboxes de submenús ── */
+ 
+.interruptor-submenu {
+    display: none;
+}
+ 
+/* ── SUBMENÚ (oculto por defecto) ── */
+ 
+.submenu {
+    display: none;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    background-color: #13132a;
+}
+ 
+.interruptor-submenu:checked ~ .submenu {
+    display: block;
+}
+ 
+.submenu li a {
+    display: block;
+    padding: 10px 1rem 10px 2rem;
+    color: #aaaaaa;
+    text-decoration: none;
+    font-size: 13px;
+    border-left: 2px solid #333;
+}
+ 
+.submenu li a:hover {
+    color: #ffffff;
+    border-left-color: #4a90d9;
+    background-color: #1e1e3a;
+}
+ 
+/* =====================
+   TABLET (≥ 640px)
+   ===================== */
+ 
+@media (min-width: 640px) {
+    .cabecera {
+        padding: 0 1.5rem;
+    }
+ 
+    .marca a {
+        font-size: 15px;
+    }
+}
+ 
+/* =====================
+   PC (≥ 900px)
+   ===================== */
+ 
+@media (min-width: 900px) {
+ 
+    .boton-menu {
+        display: none;
+    }
+ 
+    .navegacion {
+        display: flex !important;
+        flex-direction: row;
+        position: static;
+        background: none;
+        border: none;
+        height: 56px;
+        align-items: center;
+    }
+ 
+    .lista-menu {
+        display: flex;
+        flex-direction: row;
+        padding: 0;
+        height: 100%;
+        align-items: center;
+    }
+ 
+    .lista-menu > li {
+        height: 100%;
+        display: flex;
+        align-items: center;
+    }
+ 
+    .lista-menu > li > a,
+    .lista-menu > li > label {
+        padding: 0 14px;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        white-space: nowrap;
+    }
+ 
+    /* Submenú dropdown absoluto en PC */
+    .submenu {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        min-width: 180px;
+        border: 1px solid #333;
+        border-radius: 0 0 6px 6px;
+        padding: 4px 0;
+    }
+ 
+    .submenu li a {
+        padding: 9px 14px;
+        border-left: none;
+    }
+ 
+    /* En PC el hover abre el submenú, sin necesidad de checkbox */
+    .lista-menu > li:hover > .submenu {
+        display: block;
+    }
+ 
+    /* Ocultamos los checkboxes de submenú en PC (ya no hacen falta) */
+    .interruptor-submenu {
+        display: none;
+    }
+}
