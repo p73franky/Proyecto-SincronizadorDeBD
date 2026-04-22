@@ -1,8 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
-    <link rel="stylesheet" href="./CSS/estilos.css">
-<head>
-    <meta charset="UTF-8">
+<html lang="en">  
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ola</title>
 </head>

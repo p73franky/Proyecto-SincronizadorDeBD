@@ -1,4 +1,3 @@
-
 <footer>
     <div>
         <p>Contacto</p>
@@ -7,9 +6,16 @@
     </div>
     <div>
         <p>Redes Sociales</p>
-        <a href="https://x.com/"><img src="/iconos/twitter.svg" height="30px" height=" 30px"></a>
-        <a href="https://www.linkedin.com/"><img src="/img/iconos/linkedin.svg" height="30px"></a>
-        <a href="https://github.com/"><img src="/img/iconos/github.svg" height="30px"></a>
+        <a href="https://x.com/">
+            <img src="../img/iconos/twitter.svg" height="30">
+        </a>
+        <a href="https://www.linkedin.com/">
+            <img src="../img/iconos/linkedin.svg" height="30">
+        </a>
+        <a href="https://github.com/">
+            <img src="../img/iconos/github.svg" height="30">
+        </a>
+        <img src="" alt="">
     </div>
     <div>
         <p>Porfolio</p>
@@ -18,4 +24,5 @@
     </div>
 </footer>
 </body>
+
 </html>
