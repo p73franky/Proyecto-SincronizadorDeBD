@@ -1,3 +1,230 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+/*Header principal */
+
+header {
+    background-color: #1a1a2e;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 50px;
+}
+
+/* Titulo */
+
+header > div > a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+/* Icono oculto */
+
+.interruptor-menu {
+    display: none;
+}
+
+/* Boton desplegable */
+
+header > label {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    padding: 6px 10px;
+    border: 1px solid #444;
+    border-radius: 6px;
+}
+
+/* QUITAR EN CUANTO SE PONGA EL ICONOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO */
+header > label > span {
+    display: block;
+    width: 20px;
+    height: 2px;
+    background-color: #ffffff;
+    border-radius: 2px;
+    transition: all 0.25s ease;
+}
+
+
+/* Menu oculto para movil */
+
+header > nav {
+    display: none;
+    flex-direction: column;
+    background-color: #1a1a2e;
+    position: fixed;
+    top: 56px;
+    left: 0;
+    right: 0;
+    z-index: 99;
+    border-top: 1px solid #333;
+}
+/*Desplegable de menu cuando se pulsa*/
+#interruptor-menu:checked ~ nav {
+    display: flex;
+}
+
+header > nav > ul {
+    list-style: none;
+    margin: 0;
+    padding: 0.5rem 0;
+}
+
+header > nav > ul > li {
+    position: relative;
+}
+
+header > nav > ul > li > a,
+header > nav > ul > li > label {
+    display: block;
+    padding: 12px 1rem;
+    color: #cccccc;
+    text-decoration: none;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+/* Ocultar checkboxes del submenu */
+
+header > nav > ul > li > input {
+    display: none;
+}
+
+/* ── Submenu oculto por defecto ── */
+
+header > nav > ul > li > ul {
+    display: none;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    background-color: #13132a;
+}
+/*Submenu mostrado al hacer click*/
+header > nav > ul > li > input:checked ~ ul {
+    display: block;
+}
+
+header > nav > ul > li > ul > li > a {
+    display: block;
+    padding: 10px 1rem 10px 2rem;
+    color: #aaaaaa;
+    text-decoration: none;
+    font-size: 13px;
+    border-left: 2px solid #333;
+}
+
+
+/* Adaptacion a tablet */
+
+@media (min-width: 640px) and (max-width: 899px) {
+    header {
+        padding: 1.5%;
+    }
+
+    header > div > a {
+        font-size: 15px;
+    }
+}
+
+/* Adaptacion a pc */
+
+@media (min-width: 900px) {
+    header{
+        height: 1%;
+    }
+
+    /* Ocultar boton menu */
+    header > label {
+        display: none;
+    }
+
+    /* Menu horizontal */
+    header > nav {
+        display: flex !important;
+        flex-direction: row;
+        position: static;
+        height: 100%;
+        align-items: center;
+    }
+
+    header > nav > ul {
+        display: flex;
+        flex-direction: row;
+        height: 100%;
+        align-items: center;
+    }
+
+    header > nav > ul > li {
+        height: 100%;
+        display: flex;
+        align-items: center;
+    }
+
+    header > nav > ul > li > a,
+    header > nav > ul > li > label {
+        padding: 14px;
+        height: 100%;
+        display: flex;
+        align-items: center;
+    }
+
+    /* Submenú vertical */
+    header > nav > ul > li > ul {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        min-width: 180px;
+        border: 1px solid #333;
+        border-radius: 0 0 6px 6px;
+        padding: 4px 0;
+    }
+
+    header > nav > ul > li > ul > li > a {
+        padding: 9px 14px;
+        border-left: none;
+    }
+
+   
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
