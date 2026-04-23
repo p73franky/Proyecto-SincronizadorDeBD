@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">  
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./CSS/estiloss.css">
+    <link rel="stylesheet" href="./css/estilossss.css">
     <title>Ola</title>
 </head>
 <body>
