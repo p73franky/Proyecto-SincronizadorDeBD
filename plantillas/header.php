@@ -31,9 +31,9 @@
             <input type="checkbox" id="submenu-conexiones">
             <label for="submenu-conexiones">Conexiones ▾</label>
             <ul>
-                <li><a href="conexiones/nueva.php">Nueva conexión</a></li>
-                <li><a href="conexiones/lista.php">Mis conexiones</a></li>
-                <li><a href="conexiones/probar.php">Probar conexión</a></li>
+                <li><a href="#">Nueva conexión</a></li>
+                <li><a href="#">Mis conexiones</a></li>
+                <li><a href="#">Probar conexión</a></li>
             </ul>
         </li>
 
