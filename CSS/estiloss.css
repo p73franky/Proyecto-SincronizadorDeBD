@@ -3,40 +3,34 @@
     padding: 0;
 }
 
-/* =====================
-   CABECERA PRINCIPAL
-   ===================== */
+/*Header principal */
 
-.cabecera {
+header {
     background-color: #1a1a2e;
-    padding: 0 1rem;
-    height: 56px;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    position: sticky;
-    top: 0;
-    z-index: 100;
+    height: 50px;
 }
 
-/* ── LOGO ── */
+/* Titulo */
 
-.cabecera > div > a {
+header > div > a {
     color: #ffffff;
     text-decoration: none;
     font-size: 14px;
     font-weight: bold;
 }
 
-/* ── CHECKBOX OCULTO ── */
+/* Icono oculto */
 
 .interruptor-menu {
     display: none;
 }
 
-/* ── BOTÓN HAMBURGUESA ── */
+/* Boton desplegable */
 
-.cabecera > label {
+header > label {
     display: flex;
     flex-direction: column;
     gap: 5px;
@@ -46,7 +40,8 @@
     border-radius: 6px;
 }
 
-.cabecera > label > span {
+/* QUITAR EN CUANTO SE PONGA EL ICONOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO */
+header > label > span {
     display: block;
     width: 20px;
     height: 2px;
@@ -56,9 +51,9 @@
 }
 
 
-/* ── NAVEGACIÓN OCULTA EN MÓVIL ── */
+/* Menu oculto para movil */
 
-.cabecera ~ nav {
+header > nav {
     display: none;
     flex-direction: column;
     background-color: #1a1a2e;
@@ -69,25 +64,23 @@
     z-index: 99;
     border-top: 1px solid #333;
 }
-
-.interruptor-menu:checked ~ nav {
+/*Desplegable de menu cuando se pulsa*/
+#interruptor-menu:checked ~ nav {
     display: flex;
 }
 
-/* ── LISTA PRINCIPAL ── */
-
-.cabecera ~ nav > ul {
+header > nav > ul {
     list-style: none;
     margin: 0;
     padding: 0.5rem 0;
 }
 
-.cabecera ~ nav > ul > li {
+header > nav > ul > li {
     position: relative;
 }
 
-.cabecera ~ nav > ul > li > a,
-.cabecera ~ nav > ul > li > label {
+header > nav > ul > li > a,
+header > nav > ul > li > label {
     display: block;
     padding: 12px 1rem;
     color: #cccccc;
@@ -96,33 +89,27 @@
     cursor: pointer;
 }
 
-.cabecera ~ nav > ul > li > a:hover,
-.cabecera ~ nav > ul > li > label:hover {
-    color: #ffffff;
-    background-color: #2a2a4a;
-}
+/* Ocultar checkboxes del submenu */
 
-/* ── CHECKBOXES DE SUBMENÚ OCULTOS ── */
-
-.cabecera ~ nav > ul > li > input[type="checkbox"] {
+header > nav > ul > li > input {
     display: none;
 }
 
-/* ── SUBMENÚ OCULTO POR DEFECTO ── */
+/* ── Submenu oculto por defecto ── */
 
-.cabecera ~ nav > ul > li > ul {
+header > nav > ul > li > ul {
     display: none;
     list-style: none;
     margin: 0;
     padding: 0;
     background-color: #13132a;
 }
-
-.cabecera ~ nav > ul > li > input[type="checkbox"]:checked ~ ul {
+/*Submenu mostrado al hacer click*/
+header > nav > ul > li > input:checked ~ ul {
     display: block;
 }
 
-.cabecera ~ nav > ul > li > ul > li > a {
+header > nav > ul > li > ul > li > a {
     display: block;
     padding: 10px 1rem 10px 2rem;
     color: #aaaaaa;
@@ -131,11 +118,358 @@
     border-left: 2px solid #333;
 }
 
-.cabecera ~ nav > ul > li > ul > li > a:hover {
-    color: #ffffff;
-    border-left-color: #4a90d9;
-    background-color: #1e1e3a;
+
+/* Adaptacion a tablet */
+
+@media (min-width: 640px) and (max-width: 899px) {
+    header {
+        padding: 1.5%;
+    }
+
+    header > div > a {
+        font-size: 15px;
+    }
 }
+
+/* Adaptacion a pc */
+
+@media (min-width: 900px) {
+    header{
+        height: 1%;
+    }
+
+    /* Ocultar boton menu */
+    header > label {
+        display: none;
+    }
+
+    /* Menu horizontal */
+    header > nav {
+        display: flex !important;
+        flex-direction: row;
+        position: static;
+        height: 100%;
+        align-items: center;
+    }
+
+    header > nav > ul {
+        display: flex;
+        flex-direction: row;
+        height: 100%;
+        align-items: center;
+    }
+
+    header > nav > ul > li {
+        height: 100%;
+        display: flex;
+        align-items: center;
+    }
+
+    header > nav > ul > li > a,
+    header > nav > ul > li > label {
+        padding: 14px;
+        height: 100%;
+        display: flex;
+        align-items: center;
+    }
+
+    /* Submenú vertical */
+    header > nav > ul > li > ul {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        min-width: 180px;
+        border: 1px solid #333;
+        border-radius: 0 0 6px 6px;
+        padding: 4px 0;
+    }
+
+    header > nav > ul > li > ul > li > a {
+        padding: 9px 14px;
+        border-left: none;
+    }
+
+   
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 footer{
     align-items: center;
@@ -149,85 +483,4 @@ footer{
 footer>div>a{
     text-decoration: none;
     color: rgb(177, 63, 63);
-}
-
-/* =====================
-   TABLET (≥ 640px)
-   ===================== */
-
-@media (min-width: 640px) {
-    .cabecera {
-        padding: 0 1.5rem;
-    }
-
-    .cabecera > div > a {
-        font-size: 15px;
-    }
-}
-
-/* =====================
-   PC (≥ 900px)
-   ===================== */
-
-@media (min-width: 900px) {
-
-    /* Ocultar hamburguesa */
-    .cabecera > label {
-        display: none;
-    }
-
-    /* Nav horizontal */
-    .cabecera ~ nav {
-        display: flex !important;
-        flex-direction: row;
-        position: static;
-        background: none;
-        border: none;
-        height: 56px;
-        align-items: center;
-    }
-
-    .cabecera ~ nav > ul {
-        display: flex;
-        flex-direction: row;
-        padding: 0;
-        height: 100%;
-        align-items: center;
-    }
-
-    .cabecera ~ nav > ul > li {
-        height: 100%;
-        display: flex;
-        align-items: center;
-    }
-
-    .cabecera ~ nav > ul > li > a,
-    .cabecera ~ nav > ul > li > label {
-        padding: 0 14px;
-        height: 100%;
-        display: flex;
-        align-items: center;
-        white-space: nowrap;
-    }
-
-    /* Submenú dropdown en PC */
-    .cabecera ~ nav > ul > li > ul {
-        position: absolute;
-        top: 100%;
-        left: 0;
-        min-width: 180px;
-        border: 1px solid #333;
-        border-radius: 0 0 6px 6px;
-        padding: 4px 0;
-    }
-
-    .cabecera ~ nav > ul > li > ul > li > a {
-        padding: 9px 14px;
-        border-left: none;
-    }
-
-    /* Hover abre submenú en PC */
-    .cabecera ~ nav > ul > li:hover > ul {
-        display: block;
-    }
 }
