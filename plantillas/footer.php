@@ -5,10 +5,9 @@
         <p>danesccas@alu.edu.gva.es</p>
     </div>
     <div>
-        <p>Redes Sociales</p>
-        <a href="https://x.com/"><img src="./img/iconos/twitter.svg" height="30"></a>
-        <a href="https://www.linkedin.com/"><img src="./img/iconos/linkedin.svg" height="30"></a>
-        <a href="https://github.com/"><img src="./img/iconos/github.svg" height="30"></a>
+        <p>Paginas Relacionadas</p>
+        <a href="https://medautomocion.com">Med Automoción</a><br>
+        <a href="http://mediterraneacars.com">Mediterranea Cars</a>
     </div>
     <div>
         <p>Proyecto</p>
