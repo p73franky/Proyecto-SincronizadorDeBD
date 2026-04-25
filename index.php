@@ -1,3 +1,10 @@
+<?php
+    session_start();
+    if(!isset($_SESSION['usuario_rol'])){
+        header("Location: ./login.php?primero");
+        exit;
+    }
+?>
 <?php include './plantillas/header.php'; ?>
 <main>
     <div>

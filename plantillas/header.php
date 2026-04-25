@@ -40,14 +40,14 @@
                 <input type="checkbox" id="submenu-sync">
                 <label for="submenu-sync">Sincronización ▾</label>
                 <ul>
-                    <li><a href="#">Nueva tarea</a></li>
-                    <li><a href="#">Tareas activas</a></li>
+                    <li><a href="./privado/basesdedatos.php">Bases de Datos</a></li>
+                    <li><a href="./privado/usuarios.php">Usuarios</a></li>
                     <li><a href="#">Historial</a></li>
                     <li><a href="#">Configuración</a></li>
                 </ul>
             </li>
 
-            <li><a href="#">Registros</a></li>
+            <li><a href="./logout.php">Cerrar Sesión</a></li>
 
         </ul>
     </nav>

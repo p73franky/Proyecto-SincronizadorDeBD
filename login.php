@@ -1,54 +1,55 @@
-<?php
-session_start();
-require_once './includes/conexion.php';
+<body>
+    <?php
+    session_start();
+    require_once './includes/conexion.php';
 
-$error = '';
 
-if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    $nombre = $_POST['nombre'];
-    $password = $_POST['password'];
+    $error = '';
 
-    if ($nombre == '' || $password == '') {
-        $error = 'Por favor, rellena todos los campos.';
-    } else {
-        $consula = 'SELECT id, username, password_hash, rol FROM panel_users WHERE BINARY username = ?';
-        $stmt = $conexion->prepare($consula);
-        $stmt->execute([$nombre]);
-        $usuario = $stmt->fetch(PDO::FETCH_ASSOC);
+    if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+        $nombre = $_POST['nombre'];
+        $password = $_POST['password'];
 
-        if ($usuario && $password == $usuario['password_hash']) {
-            $_SESSION['usuario_id'] = $usuario['id'];
-            $_SESSION['usuario_nombre'] = $usuario['username'];
-            $_SESSION['usuario_rol'] = $usuario['rol'];
-            header('Location: index.php');
-            exit;
+        if ($nombre == '' || $password == '') {
+            $error = 'Por favor, rellena todos los campos.';
         } else {
-            $error = 'Nombre de usuario o contraseña incorrectos.';
+            $consula = 'SELECT id, username, password_hash, rol FROM panel_users WHERE BINARY username = ?';
+            $stmt = $conexion->prepare($consula);
+            $stmt->execute([$nombre]);
+            $usuario = $stmt->fetch(PDO::FETCH_ASSOC);
+
+            if ($usuario && $password == $usuario['password_hash']) {
+                $_SESSION['usuario_id'] = $usuario['id'];
+                $_SESSION['usuario_nombre'] = $usuario['username'];
+                $_SESSION['usuario_rol'] = $usuario['rol'];
+                header('Location: index.php');
+                exit;
+            } else {
+                $error = 'Nombre de usuario o contraseña incorrectos.';
+            }
         }
     }
-}
-?>
-<!DOCTYPE html>
-<html lang="es">
+    ?>
+    <!DOCTYPE html>
+    <html lang="es">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Iniciar sesión</title>
-    <link rel="stylesheet" href="./CSS/estiloss.css">
-    <link rel="stylesheet" href="./CSS/login.css">
-</head>
-
-<body>
-
-    <?php include './plantillas/header.php'; ?>
-
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Iniciar sesión</title>
+        <link rel="stylesheet" href="./CSS/estiloss.css">
+    </head>
     <div class="login-wrapper">
         <div class="login-card">
 
             <div class="login-header">
                 <h1>Iniciar sesión</h1>
                 <p>Introduce tus credenciales para continuar</p>
+                <?php
+                if (isset($_GET["primero"])) {
+                    echo "<h2>Inicia Sesión primero...</h2>";
+                }
+                ?>
             </div>
 
             <form method="POST" action="login.php">
@@ -65,12 +66,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
                 </div>
             </form>
-            <?php
-            if ($error != '') {
-                echo $error;
-            }
-            ?>
+            <div>
+                <?php
+                if ($error != '') {
+                    echo $error;
+                }
+                ?>
+            </div>
         </div>
     </div>
-
-    <?php include './plantillas/footer.php'; ?>
