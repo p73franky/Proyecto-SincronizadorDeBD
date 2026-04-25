@@ -15,6 +15,7 @@
         <p>© 2025/2026 Proyecto de Final de Grado</p>
     </div>
 </footer>
+<script src="./js/PopUp.js"></script>
 </body>
 
 </html>
