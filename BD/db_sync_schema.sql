@@ -10,8 +10,8 @@ CREATE TABLE IF NOT EXISTS panel_users (
     id            INT UNSIGNED     NOT NULL AUTO_INCREMENT,
     username      VARCHAR(60)      NOT NULL,
     password_hash VARCHAR(255)     NOT NULL,
-    role          ENUM('admin','operator','viewer')
-                                   NOT NULL DEFAULT 'viewer',
+    rol           ENUM('admin','cliente')
+                                   NOT NULL DEFAULT 'cliente',
 
     PRIMARY KEY (id),
     UNIQUE KEY uq_panel_users_username (username)
